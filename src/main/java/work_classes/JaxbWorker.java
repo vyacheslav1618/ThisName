@@ -22,7 +22,7 @@ public class JaxbWorker {
         ArrayList<Incoming> incomingList = new ArrayList<>();
         ArrayList<Outgoing> outgoingList = new ArrayList<>();
 
-//Фабрика начало
+//start of factory
         int i = 1;
         do {
             System.out.println("Press \"1\" to enter a \"DocumentCommon\" menu\n"
@@ -45,7 +45,7 @@ public class JaxbWorker {
                         switch (sc.next()) {
 
                             case "1":
-                                //создаем DocumentCommon в фабрике и выводим в строку
+                                //create DocumentCommon in factory
                                 DocumentCommon DocumentJSON = df.CreateDocumentCommon();
                                 int p1 = 0;
                                 for (DocumentCommon d : documentCommonList) {
@@ -64,7 +64,7 @@ public class JaxbWorker {
                                 }
                                 break;
                             case "2":
-                                //создаем DocumentCommon в фабрике и выводим в строку
+                                //create DocumentCommon in factory
                                 DocumentCommon DocumentXML = df.CreateDocumentCommon();
                                 //pushback element to list
                                 documentCommonList.add(DocumentXML);
@@ -103,7 +103,7 @@ public class JaxbWorker {
                         switch (sc.next()) {
 
                             case "1":
-                                //создаем Task в фабрике и выводим в строку
+                                //create Task in factory
                                 Task DocumentJSON = df.CreateDocumentTask();
                                 int p1 = 0;
                                 for (Task d : taskList) {
@@ -122,7 +122,7 @@ public class JaxbWorker {
                                 }
                                 break;
                             case "2":
-                                //создаем Task в фабрике и выводим в строку
+                                //create Task in factory
                                 Task DocumentXML = df.CreateDocumentTask();
                                 //pushback element to list
                                 taskList.add(DocumentXML);
@@ -160,7 +160,7 @@ public class JaxbWorker {
                         switch (sc.next()) {
 
                             case "1":
-                                //создаем Incoming в фабрике и выводим в строку
+                                //create Incoming in factory
                                 Incoming DocumentJSON = df.CreateDocumentIncoming();
                                 int p1 = 0;
                                 for (Incoming d : incomingList) {
@@ -179,7 +179,7 @@ public class JaxbWorker {
                                 }
                                 break;
                             case "2":
-                                //создаем Incoming в фабрике и выводим в строку
+                                //create Incoming in factory
                                 Incoming DocumentXML = df.CreateDocumentIncoming();
                                 //pushback element to list
                                 incomingList.add(DocumentXML);
@@ -218,7 +218,7 @@ public class JaxbWorker {
                         switch (sc.next()) {
 
                             case "1":
-                                //создаем Outgoing в фабрике и выводим в строку
+                                //create Outgoing in factory
                                 Outgoing DocumentJSON = df.CreateDocumentOutgoing();
                                 int p1 = 0;
                                 for (Outgoing d : outgoingList) {
@@ -237,7 +237,7 @@ public class JaxbWorker {
                                 }
                                 break;
                             case "2":
-                                //создаем Outgoing в фабрике и выводим в строку
+                                //create Outgoing in factory
                                 Outgoing DocumentXML = df.CreateDocumentOutgoing();
                                 //pushback element to list
                                 outgoingList.add(DocumentXML);
@@ -266,7 +266,7 @@ public class JaxbWorker {
                     break;
 //end of factory
                 case "5":
-                    //кейс для изъятия информации из XML-файлов
+                    //case for convert XML to object
                     DocumentCommon Document4
                             = xb.XmlLoaderDocumentCommon("D:/1.xml");
                     System.out.println(Document4.toString());
