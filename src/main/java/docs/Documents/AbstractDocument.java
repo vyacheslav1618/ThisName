@@ -1,6 +1,6 @@
 package docs.Documents;
 
-public abstract class AbstractDocument implements Comparable {
+public abstract class AbstractDocument {
 
     int id;
     String document_name;

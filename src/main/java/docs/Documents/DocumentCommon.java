@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
      "document_registration_number", "document_registration_date",
      "authors_name"})
 
-public class DocumentCommon extends AbstractDocument {
+public class DocumentCommon extends AbstractDocument implements Comparable<DocumentCommon> {
 
     public DocumentCommon() {
     }
@@ -31,8 +31,8 @@ public class DocumentCommon extends AbstractDocument {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(DocumentCommon documentCommon) {
+        return documentCommon.id >= id ? -1 : 0;
     }
 
     @XmlElement

@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name = "Outgoing")
 @XmlType(propOrder = {"id", "document_name", "document_registration_number",
     "sender", "delivery_method"})
-public class Outgoing extends AbstractDocument {
+public class Outgoing extends AbstractDocument implements Comparable<Outgoing>{
 
     private String sender;
     private String delivery_method;
@@ -36,8 +36,8 @@ public class Outgoing extends AbstractDocument {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Outgoing outgoing) {
+        return outgoing.id >= id ? -1 : 0;
     }
 
     @XmlElement

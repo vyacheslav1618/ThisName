@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 @XmlType(propOrder = {"id", "document_name", "document_registration_number",
     "term_of_execution_of_order", "responsible_executor",
     "sign_of_control", "orders_controller"})
-public class Task extends AbstractDocument {
+public class Task extends AbstractDocument implements Comparable<Task>{
 
     private String date_of_issue_of_order;
     private String term_of_execution_of_order;
@@ -48,8 +48,8 @@ public class Task extends AbstractDocument {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Task task) {
+        return task.id >= id ? -1 : 0;
     }
 
     @XmlElement
