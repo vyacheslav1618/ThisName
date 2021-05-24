@@ -14,7 +14,7 @@ public class JaxbWorker {
         MyXmlBuilder xb = new MyXmlBuilder();
         //создание объекта для работы с JSON
         MyGsonBuilder mgb = new MyGsonBuilder();
-        //создание объекта фабрики
+        //create factory object
         DocumentFactory df = new DocumentFactory();
 //create the collection for keeping new documents
         ArrayList<DocumentCommon> documentCommonList = new ArrayList<>();
