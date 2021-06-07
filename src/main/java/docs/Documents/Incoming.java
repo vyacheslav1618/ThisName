@@ -3,43 +3,43 @@ package docs.Documents;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Incoming")
-@XmlType(propOrder = {"id", "document_name", "document_registration_number",
-    "sender", "addressee", "outgoing_number", "outgoing_registration_date"})
+@XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
+    "sender", "addressee", "outgoingNumber", "outgoingRegistrationDate"})
 public class Incoming extends AbstractDocument implements Comparable<Incoming>{
 
     private String sender;
     private String addressee;
-    private int outgoing_number;
-    private String outgoing_registration_date;
+    private int outgoingNumber;
+    private String outgoingRegistrationDate;
 
     public Incoming() {
     }
 
-    public Incoming(int id, String document_name, String document_text,
-            int document_registration_number,
-            String document_registration_date, String authors_name,
-            String sender, String addressee, int outgoing_number,
-            String outgoing_registration_date) {
-        super(id, document_name, document_text, document_registration_number,
-                document_registration_date, authors_name);
+    public Incoming(int id, String documentName, String documentText,
+            int documentRegistrationNumber,
+            String documentRegistrationDate, String authorsName,
+            String sender, String addressee, int outgoingNumber,
+            String outgoingRegistrationDate) {
+        super(id, documentName, documentText, documentRegistrationNumber,
+                documentRegistrationDate, authorsName);
         this.sender = sender;
         this.addressee = addressee;
-        this.outgoing_number = outgoing_number;
-        this.outgoing_registration_date = outgoing_registration_date;
+        this.outgoingNumber = outgoingNumber;
+        this.outgoingRegistrationDate = outgoingRegistrationDate;
     }
 
     @Override
     public String toString() {
-        return "Incoming{\nid: " + this.id + ",\ndocument_name: "
-                + this.document_name + ",\ndocument_text: "
-                + this.document_text + ",\ndocument_registration_number: "
-                + this.document_registration_number
-                + ",\ndocument_registration_date: "
-                + this.document_registration_date + ",\nauthors_name: "
-                + this.authors_name + ",\nsender: " + this.sender
-                + ",\naddressee: " + this.addressee + ",\noutgoing_number: "
-                + this.outgoing_number + ",\noutgoing_registration_date: "
-                + this.outgoing_registration_date + "}\n";
+        return "Incoming{\nid: " + this.id + ",\ndocumentName: "
+                + this.documentName + ",\ndocumentText: "
+                + this.documentText + ",\ndocumentRegistrationNumber: "
+                + this.documentRegistrationNumber
+                + ",\ndocumentRegistrationDate: "
+                + this.documentRegistrationDate + ",\nauthorsName: "
+                + this.authorsName + ",\nsender: " + this.sender
+                + ",\naddressee: " + this.addressee + ",\noutgoingNumber: "
+                + this.outgoingNumber + ",\noutgoingRegistrationDate: "
+                + this.outgoingRegistrationDate + "}\n";
     }
 
     @Override
@@ -57,21 +57,21 @@ public class Incoming extends AbstractDocument implements Comparable<Incoming>{
     }
 
     @XmlAttribute
-    public String getDocument_name() {
-        return document_name;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public void setDocument_name(String document_name) {
-        this.document_name = document_name;
+    public void setDocumentName(String documentName) {
+        this.documentName = documentName;
     }
 
     @XmlAttribute
-    public int getDocument_registration_number() {
-        return document_registration_number;
+    public int getDocumentRegistrationNumber() {
+        return documentRegistrationNumber;
     }
 
-    public void setDocument_registration_number(int document_registration_number) {
-        this.document_registration_number = document_registration_number;
+    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
+        this.documentRegistrationNumber = documentRegistrationNumber;
     }
 
     @XmlElement
@@ -93,20 +93,20 @@ public class Incoming extends AbstractDocument implements Comparable<Incoming>{
     }
 
     @XmlElement
-    public int getOutgoing_number() {
-        return outgoing_number;
+    public int getOutgoingNumber() {
+        return outgoingNumber;
     }
 
-    public void setOutgoing_number(int outgoing_number) {
-        this.outgoing_number = outgoing_number;
+    public void setOutgoingNumber(int outgoingNumber) {
+        this.outgoingNumber = outgoingNumber;
     }
 
     @XmlElement
-    public String getOutgoing_registration_date() {
-        return outgoing_registration_date;
+    public String getOutgoingRegistrationDate() {
+        return outgoingRegistrationDate;
     }
 
-    public void setOutgoing_registration_date(String outgoing_registration_date) {
-        this.outgoing_registration_date = outgoing_registration_date;
+    public void setOutgoingRegistrationDate(String outgoingRegistrationDate) {
+        this.outgoingRegistrationDate = outgoingRegistrationDate;
     }
 }

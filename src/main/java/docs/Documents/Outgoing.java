@@ -3,36 +3,36 @@ package docs.Documents;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Outgoing")
-@XmlType(propOrder = {"id", "document_name", "document_registration_number",
-    "sender", "delivery_method"})
+@XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
+    "sender", "deliveryMethod"})
 public class Outgoing extends AbstractDocument implements Comparable<Outgoing>{
 
     private String sender;
-    private String delivery_method;
+    private String deliveryMethod;
 
     public Outgoing() {
     }
 
-    public Outgoing(int id, String document_name, String document_text,
-            int document_registration_number,
-            String document_registration_date, String authors_name,
-            String sender, String delivery_method) {
-        super(id, document_name, document_text, document_registration_number,
-                document_registration_date, authors_name);
+    public Outgoing(int id, String documentName, String documentText,
+            int documentRegistrationNumber,
+            String documentRegistrationDate, String authorsName,
+            String sender, String deliveryMethod) {
+        super(id, documentName, documentText, documentRegistrationNumber,
+                documentRegistrationDate, authorsName);
         this.sender = sender;
-        this.delivery_method = delivery_method;
+        this.deliveryMethod = deliveryMethod;
     }
 
     @Override
     public String toString() {
-        return "Outgoing{\nid: " + this.id + ",\ndocument_name: "
-                + this.document_name + ",\ndocument_text: " + this.document_text
-                + ",\ndocument_registration_number: "
-                + this.document_registration_number
-                + ",\ndocument_registration_date: "
-                + this.document_registration_date + ",\nauthors_name='"
-                + this.authors_name + ",\nsender: " + this.sender
-                + ",\ndelivery_method: " + this.delivery_method + "}\n";
+        return "Outgoing{\nid: " + this.id + ",\ndocumentName: "
+                + this.documentName + ",\ndocumentText: " + this.documentText
+                + ",\ndocumentRegistrationNumber: "
+                + this.documentRegistrationNumber
+                + ",\ndocumentRegistrationDate: "
+                + this.documentRegistrationDate + ",\nauthorsName='"
+                + this.authorsName + ",\nsender: " + this.sender
+                + ",\ndeliveryMethod: " + this.deliveryMethod + "}\n";
     }
 
     @Override
@@ -50,21 +50,21 @@ public class Outgoing extends AbstractDocument implements Comparable<Outgoing>{
     }
 
     @XmlAttribute
-    public String getDocument_name() {
-        return document_name;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public void setDocument_name(String document_name) {
-        this.document_name = document_name;
+    public void setDocumentName(String DocumentName) {
+        this.documentName = DocumentName;
     }
 
     @XmlAttribute
-    public int getDocument_registration_number() {
-        return document_registration_number;
+    public int getDocumentRegistrationNumber() {
+        return documentRegistrationNumber;
     }
 
-    public void setDocument_registration_number(int document_registration_number) {
-        this.document_registration_number = document_registration_number;
+    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
+        this.documentRegistrationNumber = documentRegistrationNumber;
     }
 
     @XmlElement
@@ -77,12 +77,12 @@ public class Outgoing extends AbstractDocument implements Comparable<Outgoing>{
     }
 
     @XmlElement
-    public String getDelivery_method() {
-        return delivery_method;
+    public String getDeliveryMethod() {
+        return deliveryMethod;
     }
 
-    public void setDelivery_method(String delivery_method) {
-        this.delivery_method = delivery_method;
+    public void setDeliveryMethod(String deliveryMethod) {
+        this.deliveryMethod = deliveryMethod;
     }
 }
 

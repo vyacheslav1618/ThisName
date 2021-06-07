@@ -3,31 +3,31 @@ package docs.Documents;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "DocumentCommon")
-@XmlType(propOrder = {"id", "document_name", "document_text",
-     "document_registration_number", "document_registration_date",
-     "authors_name"})
+@XmlType(propOrder = {"id", "documentName", "documentText",
+     "documentRegistrationNumber", "documentRegistrationDate",
+     "authorsName"})
 
 public class DocumentCommon extends AbstractDocument implements Comparable<DocumentCommon> {
 
     public DocumentCommon() {
     }
 
-    public DocumentCommon(int id, String document_name, String document_text,
-            int document_registration_number,
-            String document_registration_date, String authors_name) {
-        super(id, document_name, document_text, document_registration_number,
-                document_registration_date, authors_name);
+    public DocumentCommon(int id, String documentName, String documentText,
+            int documentRegistrationNumber,
+            String documentRegistrationDate, String authorsName) {
+        super(id, documentName, documentText, documentRegistrationNumber,
+                documentRegistrationDate, authorsName);
     }
 
     @Override
     public String toString() {
-        return "\nDocument{\nid: " + this.id + ",\ndocument_name: "
-                + this.document_name + ",\ndocument_text: "
-                + this.document_text + ",\ndocument_registration_number: "
-                + this.document_registration_number
-                + ",\ndocument_registration_date: "
-                + this.document_registration_date + ",\nauthors_name: "
-                + this.authors_name + "}\n";
+        return "\nDocument{\nid: " + this.id + ",\ndocumentName: "
+                + this.documentName + ",\ndocumentText: "
+                + this.documentText + ",\ndocumentRegistrationNumber: "
+                + this.documentRegistrationNumber
+                + ",\ndocumentRegistrationDate: "
+                + this.documentRegistrationDate + ",\nauthorsName: "
+                + this.authorsName + "}\n";
     }
 
     @Override
@@ -45,44 +45,44 @@ public class DocumentCommon extends AbstractDocument implements Comparable<Docum
     }
 
     @XmlElement
-    public String getDocument_name() {
-        return document_name;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public void setDocument_name(String document_name) {
-        this.document_name = document_name;
+    public void setDocumentName(String documentName) {
+        this.documentName = documentName;
     }
     
     @XmlElement
-    public int getDocument_registration_number() {
-        return document_registration_number;
+    public int getDocumentRegistrationNumber() {
+        return documentRegistrationNumber;
     }
-    public void setDocument_registration_number(int document_registration_number) {
-        this.document_registration_number = document_registration_number;
-    }
-
-    @XmlElement
-    public String getDocument_text() {
-        return document_text;
-    }
-    public void setDocument_text(String document_text) {
-        this.document_text = document_text;
+    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
+        this.documentRegistrationNumber = documentRegistrationNumber;
     }
 
     @XmlElement
-    public String getDocument_registration_date() {
-        return document_registration_date;
+    public String getDocumentText() {
+        return documentText;
     }
-    public void setDocument_registration_date(String document_registration_date) {
-        this.document_registration_date = document_registration_date;
+    public void setDocumentText(String documentText) {
+        this.documentText = documentText;
     }
 
     @XmlElement
-    public String getAuthors_name() {
-        return authors_name;
+    public String getDocumentRegistrationDate() {
+        return documentRegistrationDate;
     }
-    public void setAuthors_name(String authors_name) {
-        this.authors_name = authors_name;
+    public void setDocumentRegistrationDate(String documentRegistrationDate) {
+        this.documentRegistrationDate = documentRegistrationDate;
+    }
+
+    @XmlElement
+    public String getAuthorsName() {
+        return authorsName;
+    }
+    public void setAuthorsName(String authorsName) {
+        this.authorsName = authorsName;
     }
 
 }

@@ -9,12 +9,12 @@ public class TypeOfDocumentBuilder {
     }
 
     String CreateDocumentType() {
-        ArrayList<String> type_of_document = new ArrayList();
-        type_of_document.add(0, "Petition");
-        type_of_document.add(1, "Appeal");
-        type_of_document.add(2, "Request");
-        type_of_document.add(3, "Reply");
-        DocumentType = (String)type_of_document.get(0 + (int)(Math.random() * (double)type_of_document.size()));
+        ArrayList<String> typeOfDocument = new ArrayList();
+        typeOfDocument.add(0, "Petition");
+        typeOfDocument.add(1, "Appeal");
+        typeOfDocument.add(2, "Request");
+        typeOfDocument.add(3, "Reply");
+        DocumentType = (String)typeOfDocument.get(0 + (int)(Math.random() * (double)typeOfDocument.size()));
         return DocumentType;
     }
 }

@@ -16,7 +16,7 @@ public class MyGsonBuilder implements Serializable {
         System.out.println("Generated file JSON-format:");
         System.out.println(json);
         //создание файла в директории для сериализации объекта в JSON
-        try (PrintWriter out = new PrintWriter("D://"+ doc.getAuthors_name()
+        try (PrintWriter out = new PrintWriter("D://"+ doc.getAuthorsName()
                 +".DocumentCommon.JSON.txt")) {
             out.println(json);
         } catch (Exception ex) {
@@ -34,7 +34,7 @@ public class MyGsonBuilder implements Serializable {
         System.out.println(json);
         //создание файла в директории для сериализации объекта в JSON
         try (PrintWriter out = new PrintWriter("D://"
-                + doc.getResponsible_executor()+".Task.JSON.txt")) {
+                + doc.getResponsibleExecutor()+".Task.JSON.txt")) {
             out.println(json);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

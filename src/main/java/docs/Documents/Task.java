@@ -3,48 +3,48 @@ package docs.Documents;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Task")
-@XmlType(propOrder = {"id", "document_name", "document_registration_number",
-    "term_of_execution_of_order", "responsible_executor",
-    "sign_of_control", "orders_controller"})
+@XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
+    "termOfExecutionOfOrder", "responsibleExecutor",
+    "signOfControl", "ordersController"})
 public class Task extends AbstractDocument implements Comparable<Task>{
 
-    private String date_of_issue_of_order;
-    private String term_of_execution_of_order;
-    private String responsible_executor;
-    private String sign_of_control;
-    private String orders_controller;
+    private String dateOfIissueofOrder;
+    private String termOfExecutionOfOrder;
+    private String responsibleExecutor;
+    private String signOfControl;
+    private String ordersController;
 
     public Task() {
     }
 
-    public Task(int id, String document_name, String document_text,
-            int document_registration_number, String document_registration_date,
-            String authors_name, String date_of_issue_of_order,
-            String term_of_execution_of_order, String responsible_executor,
-            String sign_of_control, String orders_controller) {
-        super(id, document_name, document_text, document_registration_number,
-                document_registration_date, authors_name);
-        this.date_of_issue_of_order = date_of_issue_of_order;
-        this.term_of_execution_of_order = term_of_execution_of_order;
-        this.responsible_executor = responsible_executor;
-        this.sign_of_control = sign_of_control;
-        this.orders_controller = orders_controller;
+    public Task(int id, String documentName, String documentText,
+            int documentRegistrationNumber, String documentRegistrationDate,
+            String authorsName, String dateOfIssueOfOrder,
+            String termOfExecutionOfOrder, String responsibleExecutor,
+            String signOfControl, String ordersController) {
+        super(id, documentName, documentText, documentRegistrationNumber,
+                documentRegistrationDate, authorsName);
+        this.dateOfIissueofOrder = dateOfIissueofOrder;
+        this.termOfExecutionOfOrder = termOfExecutionOfOrder;
+        this.responsibleExecutor = responsibleExecutor;
+        this.signOfControl = signOfControl;
+        this.ordersController = ordersController;
     }
 
     @Override
     public String toString() {
-        return "Task{\nid: " + this.id + ",\ndocument_name: " + this.document_name
-                + ",\ndocument_text: " + this.document_text
-                + ",\ndocument_registration_number: "
-                + this.document_registration_number
-                + ",\ndocument_registration_date: "
-                + this.document_registration_date + ",\nauthors_name: "
-                + this.authors_name + ",\ndate_of_issue_of_order: "
-                + this.date_of_issue_of_order + ",\nterm_of_execution_of_order: "
-                + this.term_of_execution_of_order + ",\nresponsible_executor: "
-                + this.responsible_executor + ",\nsign_of_control: "
-                + this.sign_of_control + ",\norders_controller: "
-                + this.orders_controller + "}\n";
+        return "Task{\nid: " + this.id + ",\ndocumentName: " + this.documentName
+                + ",\ndocumentText: " + this.documentText
+                + ",\ndocumentRegistrationNumber: "
+                + this.documentRegistrationNumber
+                + ",\ndocumentRegistrationDate: "
+                + this.documentRegistrationDate + ",\nauthorsName: "
+                + this.authorsName + ",\ndateOfIissueofOrder: "
+                + this.dateOfIissueofOrder + ",\ntermOfExecutionOfOrder: "
+                + this.termOfExecutionOfOrder + ",\nresponsibleExecutor: "
+                + this.responsibleExecutor + ",\nsignOfControl: "
+                + this.signOfControl + ",\nordersController: "
+                + this.ordersController + "}\n";
     }
 
     @Override
@@ -62,56 +62,56 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     }
 
     @XmlAttribute
-    public String getDocument_name() {
-        return document_name;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public void setDocument_name(String document_name) {
-        this.document_name = document_name;
+    public void setDocumentName(String documentName) {
+        this.documentName = documentName;
     }
 
     @XmlAttribute
-    public int getDocument_registration_number() {
-        return document_registration_number;
+    public int getDocumentRegistrationNumber() {
+        return documentRegistrationNumber;
     }
 
-    public void setDocument_registration_number(int document_registration_number) {
-        this.document_registration_number = document_registration_number;
+    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
+        this.documentRegistrationNumber = documentRegistrationNumber;
     }
     
     @XmlElement
-    public String getTerm_of_execution_of_order() {
-        return term_of_execution_of_order;
+    public String getTermOfExecutionOfOrder() {
+        return termOfExecutionOfOrder;
     }
 
-    public void setTerm_of_execution_of_order(String term_of_execution_of_order) {
-        this.term_of_execution_of_order = term_of_execution_of_order;
+    public void setTermOfExecutionOfOrder(String termOfExecutionOfOrder) {
+        this.termOfExecutionOfOrder = termOfExecutionOfOrder;
     }
     
     @XmlElement
-    public String getResponsible_executor() {
-        return responsible_executor;
+    public String getResponsibleExecutor() {
+        return responsibleExecutor;
     }
 
-    public void setResponsible_executor(String responsible_executor) {
-        this.responsible_executor = responsible_executor;
+    public void setResponsibleExecutor(String responsibleExecutor) {
+        this.responsibleExecutor = responsibleExecutor;
     }
     
     @XmlElement
-    public String getSign_of_control() {
-        return sign_of_control;
+    public String getSignOfControl() {
+        return signOfControl;
     }
 
-    public void setSign_of_control(String sign_of_control) {
-        this.sign_of_control = sign_of_control;
+    public void setSignOfControl(String signOfControl) {
+        this.signOfControl = signOfControl;
     }
     
     @XmlElement
-    public String getOrders_controller() {
-        return orders_controller;
+    public String getOrdersController() {
+        return ordersController;
     }
 
-    public void setOrders_controller(String orders_controller) {
-        this.orders_controller = orders_controller;
+    public void setOrdersController(String ordersController) {
+        this.ordersController = ordersController;
     }
 }

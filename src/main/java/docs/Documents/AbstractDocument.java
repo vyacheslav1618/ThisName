@@ -3,37 +3,28 @@ package docs.Documents;
 public abstract class AbstractDocument {
 
     int id;
-    String document_name;
-    String document_text;
-    int document_registration_number;
-    String document_registration_date;
-    String authors_name;
+    String documentName;
+    String documentText;
+    int documentRegistrationNumber;
+    String documentRegistrationDate;
+    String authorsName;
 
     public AbstractDocument() {
     }
 
-    public AbstractDocument(int id, String document_name, String document_text,
-             int document_registration_number,
-             String document_registration_date,
-             String authors_name) {
+    public AbstractDocument(int id, String documentName, String documentText,
+            int documentRegistrationNumber,
+            String documentRegistrationDate,
+            String authorsName) {
         this.id = id;
-        this.document_name = document_name;
-        this.document_text = document_text;
-        this.document_registration_number = document_registration_number;
-        this.document_registration_date = document_registration_date;
-        this.authors_name = authors_name;
+        this.documentName = documentName;
+        this.documentText = documentText;
+        this.documentRegistrationNumber = documentRegistrationNumber;
+        this.documentRegistrationDate = documentRegistrationDate;
+        this.authorsName = authorsName;
     }
 
-    public void SaveDocument() {
-        System.out.println("Document save!");
+    public String getDocumentName() {
+        return this.documentName;
     }
-
-    public String getDocument_name() {
-        return this.document_name;
-    }
-
-    public void Compare_method() {
-        System.out.println("Nothing to compare");
-    }
-
 }
