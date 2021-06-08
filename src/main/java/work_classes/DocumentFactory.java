@@ -39,7 +39,7 @@ public class DocumentFactory {
         //присвоение рандомного значения для id и documentRegistrationNumber
         id = 1 + (int) (Math.random() * 9000);
         documentRegistrationNumber = 1 + (int) (Math.random() * 11000);
-        String documentName = tdb.CreateDocumentType();;
+        String documentName = tdb.CreateDocumentType();
         String documentText = "Enter text here...";
         documentRegistrationDate = date.toString();
         authorsName = eb.CreateEmployee();

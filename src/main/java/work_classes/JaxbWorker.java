@@ -47,6 +47,7 @@ public class JaxbWorker {
                                 //create DocumentCommon in factory
                                 TypeOfCreatedDocsInterface documentCommon = df.CreateDocumentCommon();
                                 typeOfCreatedDocsInterface.add(documentCommon);
+                                System.out.println("\nDocument documentCommon created!\n");
                                 
                                // int p1 = 0;
                                 
@@ -70,14 +71,17 @@ public class JaxbWorker {
                             case "2":
                                 TypeOfCreatedDocsInterface documentIncoming = df.CreateDocumentIncoming();
                                 typeOfCreatedDocsInterface.add(documentIncoming);
+                                System.out.println("\nDocument Incoming created!\n");
                                 break;
                             case "3":
                                 TypeOfCreatedDocsInterface documentOutgoing = df.CreateDocumentOutgoing();
                                 typeOfCreatedDocsInterface.add(documentOutgoing);
+                                System.out.println("\nDocument Outgoing created!\n");
                                 break;
                             case "4":
                                 TypeOfCreatedDocsInterface documentTask = df.CreateDocumentTask();
                                 typeOfCreatedDocsInterface.add(documentTask);
+                                System.out.println("\nDocument Task created!\n");
                                 break;
                             case "0":
                                 i1 = 0;
