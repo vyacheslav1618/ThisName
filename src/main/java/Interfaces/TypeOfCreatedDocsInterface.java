@@ -1,8 +1,8 @@
-
 package Interfaces;
 
-public interface TypeOfCreatedDocsInterface {
-    
-    
-    
+import docs.Documents.*;
+
+public interface TypeOfCreatedDocsInterface extends Comparable<TypeOfCreatedDocsInterface> {
+
+
 }

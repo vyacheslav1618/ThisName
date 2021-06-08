@@ -1,5 +1,6 @@
 package docs.Documents;
 
+import Interfaces.TypeOfCreatedDocsInterface;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "DocumentCommon")
@@ -7,7 +8,7 @@ import javax.xml.bind.annotation.*;
      "documentRegistrationNumber", "documentRegistrationDate",
      "authorsName"})
 
-public class DocumentCommon extends AbstractDocument implements Comparable<DocumentCommon> {
+public class DocumentCommon extends AbstractDocument  {
 
     public DocumentCommon() {
     }
@@ -31,8 +32,8 @@ public class DocumentCommon extends AbstractDocument implements Comparable<Docum
     }
 
     @Override
-    public int compareTo(DocumentCommon documentCommon) {
-        return documentCommon.id >= id ? -1 : 0;
+    public int compareTo(TypeOfCreatedDocsInterface a) {
+        return ((AbstractDocument) a).id >= id ? -1 : 0;
     }
 
     @XmlElement

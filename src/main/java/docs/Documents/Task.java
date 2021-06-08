@@ -1,12 +1,13 @@
 package docs.Documents;
 
+import Interfaces.TypeOfCreatedDocsInterface;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Task")
 @XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
     "termOfExecutionOfOrder", "responsibleExecutor",
     "signOfControl", "ordersController"})
-public class Task extends AbstractDocument implements Comparable<Task>{
+public class Task extends AbstractDocument {
 
     private String dateOfIissueofOrder;
     private String termOfExecutionOfOrder;
@@ -48,8 +49,8 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     }
 
     @Override
-    public int compareTo(Task task) {
-        return task.id >= id ? -1 : 0;
+    public int compareTo(TypeOfCreatedDocsInterface a) {
+        return ((AbstractDocument) a).id >= id ? -1 : 0;
     }
 
     @XmlElement
@@ -78,7 +79,7 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
         this.documentRegistrationNumber = documentRegistrationNumber;
     }
-    
+
     @XmlElement
     public String getTermOfExecutionOfOrder() {
         return termOfExecutionOfOrder;
@@ -87,7 +88,7 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     public void setTermOfExecutionOfOrder(String termOfExecutionOfOrder) {
         this.termOfExecutionOfOrder = termOfExecutionOfOrder;
     }
-    
+
     @XmlElement
     public String getResponsibleExecutor() {
         return responsibleExecutor;
@@ -96,7 +97,7 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     public void setResponsibleExecutor(String responsibleExecutor) {
         this.responsibleExecutor = responsibleExecutor;
     }
-    
+
     @XmlElement
     public String getSignOfControl() {
         return signOfControl;
@@ -105,7 +106,7 @@ public class Task extends AbstractDocument implements Comparable<Task>{
     public void setSignOfControl(String signOfControl) {
         this.signOfControl = signOfControl;
     }
-    
+
     @XmlElement
     public String getOrdersController() {
         return ordersController;

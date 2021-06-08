@@ -1,7 +1,9 @@
 package work_classes;
 
+import Interfaces.TypeOfCreatedDocsInterface;
 import docs.Documents.*;
 import java.io.File;
+import java.util.ArrayList;
 import javax.xml.bind.*;
 
 public class MyXmlBuilder {
@@ -26,6 +28,7 @@ public class MyXmlBuilder {
         String fileName = "D:/OutgoingXML.xml";
         convertObjectToXml(doc, fileName);
     }
+    
 
     public DocumentCommon XmlLoaderDocumentCommon(String fileName) {
         DocumentCommon documentCommon = fromXmlToObjectDocumentCommon(fileName);
@@ -151,6 +154,16 @@ public class MyXmlBuilder {
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(doc, new File(filePath));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void saveToXML(ArrayList<TypeOfCreatedDocsInterface> typeOfCreatedDocsInterface, String filePath) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(TypeOfCreatedDocsInterface.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(typeOfCreatedDocsInterface, new File(filePath));
         } catch (JAXBException e) {
             e.printStackTrace();
         }

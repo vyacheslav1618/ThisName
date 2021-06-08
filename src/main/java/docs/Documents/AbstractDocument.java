@@ -1,8 +1,10 @@
 package docs.Documents;
 
-public abstract class AbstractDocument {
+import Interfaces.TypeOfCreatedDocsInterface;
 
-    int id;
+public abstract class AbstractDocument implements TypeOfCreatedDocsInterface {
+
+    public int id;
     String documentName;
     String documentText;
     int documentRegistrationNumber;
@@ -27,4 +29,5 @@ public abstract class AbstractDocument {
     public String getDocumentName() {
         return this.documentName;
     }
+
 }

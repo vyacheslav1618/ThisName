@@ -1,11 +1,12 @@
 package docs.Documents;
 
+import Interfaces.TypeOfCreatedDocsInterface;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Incoming")
 @XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
     "sender", "addressee", "outgoingNumber", "outgoingRegistrationDate"})
-public class Incoming extends AbstractDocument implements Comparable<Incoming>{
+public class Incoming extends AbstractDocument {
 
     private String sender;
     private String addressee;
@@ -43,9 +44,13 @@ public class Incoming extends AbstractDocument implements Comparable<Incoming>{
     }
 
     @Override
-    public int compareTo(Incoming incoming) {
-        return incoming.id >= id ? -1 : 0;
+    public int compareTo(TypeOfCreatedDocsInterface a) {
+        return ((AbstractDocument) a).id >= id ? -1 : 0;
     }
+//    @Override
+//    public int compareTo(Incoming incoming) {
+//        return incoming.id >= id ? -1 : 0;
+//    }
 
     @XmlElement
     public int getId() {
