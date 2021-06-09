@@ -1,20 +1,17 @@
 package work_classes;
 
-import Interfaces.TypeOfCreatedDocsInterface;
 import com.google.gson.*;
-import docs.Documents.*;
 import java.io.*;
-import java.util.ArrayList;
 
 public class MyGsonBuilder implements Serializable {
 
-    void gsonCreate(ArrayList<TypeOfCreatedDocsInterface> typeOfCreatedDocsInterface) {
+    void gsonCreate(Holder holder, String filePath) {
 
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
-        String json = gson.toJson(typeOfCreatedDocsInterface);
-        try ( PrintWriter out = new PrintWriter("D://ListOfDocs.JSON.txt")) {
+        String json = gson.toJson(holder);
+        try ( PrintWriter out = new PrintWriter(filePath)) {
             out.println(json);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

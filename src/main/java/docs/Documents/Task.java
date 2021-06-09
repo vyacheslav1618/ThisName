@@ -1,19 +1,15 @@
 package docs.Documents;
 
-import Interfaces.TypeOfCreatedDocsInterface;
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "Task")
-@XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
-    "termOfExecutionOfOrder", "responsibleExecutor",
-    "signOfControl", "ordersController"})
+@XmlRootElement
 public class Task extends AbstractDocument {
 
-    private String dateOfIissueofOrder;
-    private String termOfExecutionOfOrder;
-    private String responsibleExecutor;
-    private String signOfControl;
-    private String ordersController;
+    public String dateOfIissueofOrder;
+    public String termOfExecutionOfOrder;
+    public String responsibleExecutor;
+    public String signOfControl;
+    public String ordersController;
 
     public Task() {
     }
@@ -46,73 +42,5 @@ public class Task extends AbstractDocument {
                 + this.responsibleExecutor + ",\nsignOfControl: "
                 + this.signOfControl + ",\nordersController: "
                 + this.ordersController + "}\n";
-    }
-
-    @Override
-    public int compareTo(TypeOfCreatedDocsInterface a) {
-        return ((AbstractDocument) a).id >= id ? -1 : 0;
-    }
-
-    @XmlElement
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @XmlAttribute
-    public String getDocumentName() {
-        return documentName;
-    }
-
-    public void setDocumentName(String documentName) {
-        this.documentName = documentName;
-    }
-
-    @XmlAttribute
-    public int getDocumentRegistrationNumber() {
-        return documentRegistrationNumber;
-    }
-
-    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
-        this.documentRegistrationNumber = documentRegistrationNumber;
-    }
-
-    @XmlElement
-    public String getTermOfExecutionOfOrder() {
-        return termOfExecutionOfOrder;
-    }
-
-    public void setTermOfExecutionOfOrder(String termOfExecutionOfOrder) {
-        this.termOfExecutionOfOrder = termOfExecutionOfOrder;
-    }
-
-    @XmlElement
-    public String getResponsibleExecutor() {
-        return responsibleExecutor;
-    }
-
-    public void setResponsibleExecutor(String responsibleExecutor) {
-        this.responsibleExecutor = responsibleExecutor;
-    }
-
-    @XmlElement
-    public String getSignOfControl() {
-        return signOfControl;
-    }
-
-    public void setSignOfControl(String signOfControl) {
-        this.signOfControl = signOfControl;
-    }
-
-    @XmlElement
-    public String getOrdersController() {
-        return ordersController;
-    }
-
-    public void setOrdersController(String ordersController) {
-        this.ordersController = ordersController;
     }
 }

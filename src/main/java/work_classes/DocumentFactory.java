@@ -2,28 +2,30 @@ package work_classes;
 
 import docs.Documents.*;
 import java.util.Date;
+import javax.xml.bind.annotation.*;
 
+@XmlRegistry
 public class DocumentFactory {
 
-    //создание переменных, которые будут использованы в XML
-    private int id;
-    private int documentRegistrationNumber;
-    private String documentRegistrationDate;
-    private String authorsName;
+    public int id;
+    public int documentRegistrationNumber;
+    public String documentRegistrationDate;
+    public String authorsName;
 
     public DocumentCommon CreateDocumentCommon() {
         Date date = new Date();
-        //создание работника из списка
+//create an employee from list
         EmployeeBuilder eb = new EmployeeBuilder();
-        //создание типа документа из списка
+//create type of document from list
         TypeOfDocumentBuilder tdb = new TypeOfDocumentBuilder();
-        //присвоение рандомного значения для id и documentRegistrationNumber
+//create random id and document registratoin number
         id = 1 + (int) (Math.random() * 9000);
         documentRegistrationNumber = 1 + (int) (Math.random() * 11000);
         String documentName = tdb.CreateDocumentType();
         String documentText = "Enter text here...";
         documentRegistrationDate = date.toString();
         authorsName = eb.CreateEmployee();
+//create an object DocumentCommon type
         DocumentCommon NewGeneratedDocument = new DocumentCommon(id, documentName,
                 documentText, documentRegistrationNumber,
                 documentRegistrationDate, authorsName);
@@ -32,11 +34,8 @@ public class DocumentFactory {
 
     public Task CreateDocumentTask() {
         Date date = new Date();
-        //создание работника из списка
         EmployeeBuilder eb = new EmployeeBuilder();
-        //создание типа документа из списка
         TypeOfDocumentBuilder tdb = new TypeOfDocumentBuilder();
-        //присвоение рандомного значения для id и documentRegistrationNumber
         id = 1 + (int) (Math.random() * 9000);
         documentRegistrationNumber = 1 + (int) (Math.random() * 11000);
         String documentName = tdb.CreateDocumentType();
@@ -58,12 +57,8 @@ public class DocumentFactory {
 
     public Incoming CreateDocumentIncoming() {
         Date date = new Date();
-        //создание работника из списка
         EmployeeBuilder eb = new EmployeeBuilder();
-        //создание типа документа из списка
         TypeOfDocumentBuilder tdb = new TypeOfDocumentBuilder();
-        //присвоение рандомного значения для id и documentRegistrationNumber
-        // и outgoing_number
         id = 1 + (int) (Math.random() * 9000);
         documentRegistrationNumber = 1 + (int) (Math.random() * 11000);
         int outgoingNumber = 1 + (int) (Math.random() * 50000);
@@ -83,11 +78,8 @@ public class DocumentFactory {
 
     public Outgoing CreateDocumentOutgoing() {
         Date date = new Date();
-        //создание работника из списка
         EmployeeBuilder eb = new EmployeeBuilder();
-        //создание типа документа из списка
         TypeOfDocumentBuilder tdb = new TypeOfDocumentBuilder();
-        //присвоение рандомного значения для id и documentRegistrationNumber
         id = 1 + (int) (Math.random() * 9000);
         documentRegistrationNumber = 1 + (int) (Math.random() * 11000);
         String documentName = tdb.CreateDocumentType();

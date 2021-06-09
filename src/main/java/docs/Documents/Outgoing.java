@@ -1,15 +1,12 @@
 package docs.Documents;
 
-import Interfaces.TypeOfCreatedDocsInterface;
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "Outgoing")
-@XmlType(propOrder = {"id", "documentName", "documentRegistrationNumber",
-    "sender", "deliveryMethod"})
+@XmlRootElement
 public class Outgoing extends AbstractDocument {
 
-    private String sender;
-    private String deliveryMethod;
+    public String sender;
+    public String deliveryMethod;
 
     public Outgoing() {
     }
@@ -34,55 +31,5 @@ public class Outgoing extends AbstractDocument {
                 + this.documentRegistrationDate + ",\nauthorsName='"
                 + this.authorsName + ",\nsender: " + this.sender
                 + ",\ndeliveryMethod: " + this.deliveryMethod + "}\n";
-    }
-
-    @Override
-    public int compareTo(TypeOfCreatedDocsInterface a) {
-        return ((AbstractDocument) a).id >= id ? -1 : 0;
-    }
-
-    @XmlElement
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @XmlAttribute
-    public String getDocumentName() {
-        return documentName;
-    }
-
-    public void setDocumentName(String DocumentName) {
-        this.documentName = DocumentName;
-    }
-
-    @XmlAttribute
-    public int getDocumentRegistrationNumber() {
-        return documentRegistrationNumber;
-    }
-
-    public void setDocumentRegistrationNumber(int documentRegistrationNumber) {
-        this.documentRegistrationNumber = documentRegistrationNumber;
-    }
-
-    @XmlElement
-    public String getSender() {
-        return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
-
-    @XmlElement
-    public String getDeliveryMethod() {
-        return deliveryMethod;
-    }
-
-    public void setDeliveryMethod(String deliveryMethod) {
-        this.deliveryMethod = deliveryMethod;
     }
 }

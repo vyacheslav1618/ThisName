@@ -1,15 +1,22 @@
 package docs.Documents;
 
-import Interfaces.TypeOfCreatedDocsInterface;
+import javax.xml.bind.annotation.*;
 
-public abstract class AbstractDocument implements TypeOfCreatedDocsInterface {
+@XmlRootElement
+public abstract class AbstractDocument implements Comparable<AbstractDocument> {
 
+    @XmlElement
     public int id;
-    String documentName;
-    String documentText;
-    int documentRegistrationNumber;
-    String documentRegistrationDate;
-    String authorsName;
+    @XmlElement
+    public String documentName;
+    @XmlElement
+    public String documentText;
+    @XmlElement
+    public int documentRegistrationNumber;
+    @XmlElement
+    public String documentRegistrationDate;
+    @XmlElement
+    public String authorsName;
 
     public AbstractDocument() {
     }
@@ -26,8 +33,9 @@ public abstract class AbstractDocument implements TypeOfCreatedDocsInterface {
         this.authorsName = authorsName;
     }
 
-    public String getDocumentName() {
-        return this.documentName;
+    @Override
+    public int compareTo(AbstractDocument a) {
+        return a.id >= id ? -1 : 0;
     }
 
 }

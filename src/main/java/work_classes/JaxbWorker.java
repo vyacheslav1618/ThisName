@@ -1,27 +1,22 @@
 package work_classes;
 
-import Interfaces.TypeOfCreatedDocsInterface;
 import docs.Documents.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class JaxbWorker {
 
-    public static void main(String[] args) {
-        //создание объекта для ввода с консоли
+        public static void main(String[] args) {
+//use a scanner
         Scanner sc = new Scanner(System.in);
-        //создание объекта для работы с XML
+//create the object XML-class
         MyXmlBuilder xb = new MyXmlBuilder();
-        //создание объекта для работы с JSON
+//create the object JSON-class
         MyGsonBuilder mgb = new MyGsonBuilder();
-        //create factory object
+//create factory object
         DocumentFactory df = new DocumentFactory();
 //create a colletction for docs
-        ArrayList<TypeOfCreatedDocsInterface> typeOfCreatedDocsInterface = new ArrayList<>();
+        Holder holder = new Holder();
         
-        
-//start of factory
         int i = 1;
         do {
             System.out.println("Enter \"1\" to create a new document.\n"
@@ -45,65 +40,40 @@ public class JaxbWorker {
 
                             case "1":
                                 //create DocumentCommon in factory
-                                TypeOfCreatedDocsInterface documentCommon = df.CreateDocumentCommon();
-                                typeOfCreatedDocsInterface.add(documentCommon);
+                                AbstractDocument documentCommon = df.CreateDocumentCommon();
+                                holder.addThing(documentCommon);
                                 System.out.println("\nDocument documentCommon created!\n");
-                                
-                               // int p1 = 0;
-                                
-                                //check for exsisting ID
-//                                for (DocumentCommon d : documentCommonList) {
-//                                    if (d.getId() == DocumentJSON.getId()) {
-//                                        p1 = 1;
-//                                        break;
-//                                    }
-//                                }
-                                
-//                                if (p1 == 1) {
-//                                    System.out.println("Id exsists! Document has not been created.");
-//                                } else {
-//                                    //pushback element to list
-//                                    documentCommonList.add(DocumentJSON);
-//                                    //вызов метода для сериализации объекта фабрики в JSON
-//                                    mgb.gsonCreate(DocumentJSON);
-//                                }
                                 break;
                             case "2":
-                                TypeOfCreatedDocsInterface documentIncoming = df.CreateDocumentIncoming();
-                                typeOfCreatedDocsInterface.add(documentIncoming);
+                                AbstractDocument documentIncoming = df.CreateDocumentIncoming();
+                                holder.addThing(documentIncoming);
                                 System.out.println("\nDocument Incoming created!\n");
                                 break;
                             case "3":
-                                TypeOfCreatedDocsInterface documentOutgoing = df.CreateDocumentOutgoing();
-                                typeOfCreatedDocsInterface.add(documentOutgoing);
+                                AbstractDocument documentOutgoing = df.CreateDocumentOutgoing();
+                                holder.addThing(documentOutgoing);
                                 System.out.println("\nDocument Outgoing created!\n");
                                 break;
                             case "4":
-                                TypeOfCreatedDocsInterface documentTask = df.CreateDocumentTask();
-                                typeOfCreatedDocsInterface.add(documentTask);
+                                AbstractDocument documentTask = df.CreateDocumentTask();
+                                holder.addThing(documentTask);
                                 System.out.println("\nDocument Task created!\n");
                                 break;
                             case "0":
                                 i1 = 0;
                                 break;
                             default:
-                                System.out.println("Enter correct value, please.");
+                                System.out.println("Enter correct value, please.\n");
                                 break;
                         }
                     } while (i1 != 0);
                     break;
-
                 case "2":
-                    for(TypeOfCreatedDocsInterface p : typeOfCreatedDocsInterface){
-                    System.out.println(p.toString());
-                    }
+                    holder.print();
                     break;
                 case "3":
-                     Collections.sort(typeOfCreatedDocsInterface);
-                     
-                                System.out.println("List has been sorted by ID");
-                                break;
-
+                    holder.sort();
+                    break;
                 case "4":
                     int i4 = 1;
                     do {
@@ -113,16 +83,18 @@ public class JaxbWorker {
                         switch (sc.next()) {
 
                             case "1":
-                                xb.saveToXML(typeOfCreatedDocsInterface, "D:/1.xml");
+                                xb.saveToXML(holder, "D:/XML.xml");
+                                System.out.println("List of documents has been saved to XML-format file!\n");
                                 break;
                             case "2":
-                                mgb.gsonCreate(typeOfCreatedDocsInterface);
+                                mgb.gsonCreate(holder, "D:/JSON.txt");
+                                System.out.println("List of documents has been saved to JSON-format file!\n");
                                 break;
                             case "0":
                                 i4 = 0;
                                 break;
                             default:
-                                System.out.println("Enter correct value, please.");
+                                System.out.println("Enter correct value, please.\n");
                                 break;
                         }
                     } while (i4 != 0);
@@ -131,9 +103,8 @@ public class JaxbWorker {
                     i = 0;
                     break;
                 default:
-                    System.out.println("Enter correct value, please.");
+                    System.out.println("Enter correct value, please.\n");
             }
-
         } while (i != 0);
     }
 }
